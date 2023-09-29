@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu">
+
+        </div>
+        <div class="s-body">
+            <div class="s-menu">
+                <button class="btn btn-primary" onclick="handleShowModalCreate()">Create</button>
+                <button class="btn btn-delete" id="btnDelete">Delete</button>
+            </div>
+            <table class="st">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Phone</th>
+                        <th>Hobbies</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="stb">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="s-footer">
+
+        </div>
+    </div>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create Student</h3>
+                <i class="fa-solid fa-xmark" onclick="handleBtnModalClose()"></i>
+            </div>
+            <div class="modal-body">
+                <form action="#" method="post">
+                    <input type="hidden" name="id-student" id="id-student" />
+                    <div class="frm-sc-row">
+                        <h4>Name</h4>
+                        <div>
+                            <input pattern="^[a-zA-Z0-9\s]{5,20}$" id="mTxtName" class="col-3" type="text"
+                                placeholder="Enter your name" />
+                            <p class="validate-error">Tên không hợp lệ</p>
+                        </div>
+                    </div>
+                    <div class="frm-sc-row">
+                        <h4>Age</h4>
+                        <div>
+                            <input min="0" max="100" id="mTxtAge" class="col-1" type="number" />
+                            <p class="validate-error">Tuổi không hợp lệ</p>
+                        </div>
+                    </div>
+                    <div class="frm-sc-row">
+                        <h4>Phone</h4>
+                        <div>
+                            <input pattern="^(0[1-9]\d{8,9})$" id="mTxtPhone" class="col-3" type="text" />
+                            <p class="validate-error">Số điện thoại không hợp lệ</p>
+                        </div>
+                    </div>
+                    <div class="frm-sc-row">
+                        <h4>Hobbies</h4>
+                        <div>
+                            <input id="mTxtHobbies" class="col-3" type="text" />
+                        </div>
+                    </div>
+                    <div class="frm-sc-row">
+                        <button type="button" class="btn btn-primary" id="btnModalCreate"
+                            onclick="handleBtnModalCreate()">Create</button>
+                        <button type="button" class="btn btn-primary hide" id="btnModalUpdate"
+                            onclick="handleBtnModalUpdate()">Update</button>
+                        <button type="button" class="btn btn-dark" id="btnModalCancel"
+                            onclick="handleBtnModalCancel()">Cancel</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script src="app.js">
+    </script>
+</body>
+
+</html>
